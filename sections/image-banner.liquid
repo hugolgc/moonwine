@@ -1,13 +1,20 @@
 <section id="Banner-{{ section.id }}" class="py-56">
   <div class="max-w-content mx-auto px-6">
-    <h2 class="max-w-screen-md pl-16 text-[80px] text-white">{{ block.settings.text | escape }}</h2>
+    
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+        <h2 class="max-w-screen-md pl-16 text-[80px] text-white">{{ block.settings.heading | escape }}</h2>
+      {%- endcase -%}
+    {%- endfor -%}
+
   </div>
 </section>
 
 {%- style -%}
   #Banner-{{ section.id }} {
     {%- if section.settings.image != blank -%}
-    background: url({{ section.settings.image | image_url: width: 1140 }}) center / cover;
+    background: url({{ section.settings.image.src | image_url: width: 1920 }}) center / cover;
     {%- else -%}
     background-color: rgba(0, 0, 0, .9);
     {%- endif -%}
@@ -17,17 +24,13 @@
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
-  "tag": "section",
-  "class": "section",
+  "tag": "div",
+  "class": "div",
   "settings": [
     {
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-banner.settings.image.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.image-banner.settings.header.content"
     }
   ],
   "blocks": [
@@ -39,7 +42,18 @@
         {
           "type": "text",
           "id": "heading",
+          "default": "Image banner",
           "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
         }
       ]
     }
