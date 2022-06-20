@@ -1,27 +1,53 @@
-<section id="Banner-{{ section.id }}" class="relative">
-  <div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
-    <h2 class="text-[80px] text-white text-center">Des vins vivants, <br /> respectueux de la nature</h2>
-  </div>
-  <img
-    src="{{ 'image-banner-background.png' | asset_img_url: '1920x' }}"
-    alt="Background"
-  />
-  <img
-    src="{{ 'image-banner-left.png' | asset_img_url: '1920x' }}"
-    alt="Background"
-    class="absolute left-0 bottom-0 max-w-[35%]"
-  />
-  <img
-    src="{{ 'image-banner-right.png' | asset_img_url: '1920x' }}"
-    alt="Background"
-    class="absolute right-0 bottom-0 max-w-[65%]"
-  />
-</section>
+<div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
+
+  {% for block in section.blocks %}
+    {%- case block.type -%}
+      {%- when 'title' -%}
+      <h2 class="text-[80px] text-white text-center">{{ block.settings.title | escape }}</h2>
+    {%- endcase -%}
+  {%- endfor -%}
+
+</div>
+<img
+  src="{{ 'image-banner-background.png' | asset_img_url: '1920x' }}"
+  alt="Background"
+/>
+<img
+  src="{{ 'image-banner-left.png' | asset_img_url: '1920x' }}"
+  alt="Background"
+  class="absolute left-0 bottom-0 max-w-[35%]"
+/>
+<img
+  src="{{ 'image-banner-right.png' | asset_img_url: '1920x' }}"
+  alt="Background"
+  class="absolute right-0 bottom-0 max-w-[65%]"
+/>
 
 {% schema %}
 {
-  "name": "t:sections.image-banner.name",
-  "tag": "div",
-  "class": "div"
+  "name": "Bannière",
+  "tag": "section",
+  "class": "relative",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Bannière"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Titre",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de la bannière"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
