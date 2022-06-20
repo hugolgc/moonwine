@@ -1,6 +1,6 @@
 <section id="Banner-{{ section.id }}" class="py-56">
   <div class="max-w-content mx-auto px-6">
-    <h2 class="max-w-screen-md pl-16 text-[80px] text-white">{{ block.settings.heading | escape }}</h2>
+    <h2 class="max-w-screen-md pl-16 text-[80px] text-white">{{ block.settings.text | escape }}</h2>
   </div>
 </section>
 
@@ -17,8 +17,8 @@
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
-  "tag": "div",
-  "class": "div",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
       "type": "image_picker",
