@@ -192,6 +192,13 @@
           font-size: 1.6rem;
         }
       }
+
+      @font-face {
+        font-family: 'Eugusto';
+        font-style: serif;
+        font-weight: 400;
+        src: url({{ 'Eugusto' | asset_url }}) format('truetype');
+      }
     {% endstyle %}
 
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
