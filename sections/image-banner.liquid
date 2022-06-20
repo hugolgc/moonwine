@@ -1,62 +1,27 @@
-<section id="Banner-{{ section.id }}" class="py-56">
-  <div class="max-w-content mx-auto px-6">
-    
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'heading' -%}
-        <h2 class="max-w-screen-md pl-16 text-[80px] text-white">{{ block.settings.heading | escape }}</h2>
-      {%- endcase -%}
-    {%- endfor -%}
-
+<section id="Banner-{{ section.id }}" class="relative">
+  <div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
+    <h2 class="text-[80px] text-white text-center">Des vins vivants, <br /> respectueux de la nature</h2>
   </div>
+  <img
+    src="{{ 'image-banner-background.png' | asset_img_url: '1920x' }}"
+    alt="Background"
+  />
+  <img
+    src="{{ 'image-banner-left.png' | asset_img_url: '1920x' }}"
+    alt="Background"
+    class="absolute left-0 bottom-0 max-w-[35%]"
+  />
+  <img
+    src="{{ 'image-banner-right.png' | asset_img_url: '1920x' }}"
+    alt="Background"
+    class="absolute right-0 bottom-0 max-w-[65%]"
+  />
 </section>
-
-{%- style -%}
-  #Banner-{{ section.id }} {
-    {%- if section.settings.image != blank -%}
-    background: url({{ section.settings.image.src | image_url: width: 1920 }}) center / cover;
-    {%- else -%}
-    background-color: rgba(0, 0, 0, .9);
-    {%- endif -%}
-  }
-{%- endstyle -%}
 
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
   "tag": "div",
-  "class": "div",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:sections.image-banner.settings.image.label"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "t:sections.image-banner.blocks.heading.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Image banner",
-          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.image-banner.presets.name",
-      "blocks": [
-        {
-          "type": "heading"
-        }
-      ]
-    }
-  ]
+  "class": "div"
 }
 {% endschema %}
