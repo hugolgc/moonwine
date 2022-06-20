@@ -3,18 +3,18 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "de2b75f9-a6b0-4f0c-a995-3ec6d491d3e3": {
+          "type": "title",
           "settings": {
-            "heading": "Des vins vivants, respectueux de la nature"
+            "title": "Des vins vivants, respectueux de la nature"
           }
         }
       },
       "block_order": [
-        "heading"
+        "de2b75f9-a6b0-4f0c-a995-3ec6d491d3e3"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/dirosso.jpg"
+        "title": ""
       }
     },
     "rich_text": {
