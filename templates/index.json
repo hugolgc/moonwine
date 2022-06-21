@@ -2,19 +2,8 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "de2b75f9-a6b0-4f0c-a995-3ec6d491d3e3": {
-          "type": "title",
-          "settings": {
-            "title": "Des vins vivants, respectueux de la nature"
-          }
-        }
-      },
-      "block_order": [
-        "de2b75f9-a6b0-4f0c-a995-3ec6d491d3e3"
-      ],
       "settings": {
-        "title": ""
+        "title": "Des vins vivants, respectueux de la nature"
       }
     },
     "rich_text": {
