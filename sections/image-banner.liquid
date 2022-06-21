@@ -1,9 +1,9 @@
 <div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
 
-  {% for block in section.blocks %}
-    {%- case block.type -%}
+  {% for setting in section.setting %}
+    {%- case setting.type -%}
       {%- when 'title' -%}
-      <h2 class="max-w-[1000px] mx-auto text-[80px] text-white text-center font-serif">{{ block.settings.title | escape }}</h2>
+      <h2 class="max-w-[1000px] mx-auto text-[80px] text-white text-center font-serif">{{ setting.title | escape }}</h2>
     {%- endcase -%}
   {%- endfor -%}
 
@@ -14,14 +14,14 @@
   class="w-full"
 />
 <img
-  src="{{ 'image-banner-left.png' | asset_img_url: '1920x' }}"
+  src="{{ 'image-banner-left.png' | asset_img_url: '1000x' }}"
   alt="Background"
-  class="absolute left-0 bottom-0 max-w-[35%]"
+  class="absolute left-0 bottom-0 w-[35%]"
 />
 <img
-  src="{{ 'image-banner-right.png' | asset_img_url: '1920x' }}"
+  src="{{ 'image-banner-right.png' | asset_img_url: '1000x' }}"
   alt="Background"
-  class="absolute right-0 bottom-0 max-w-[65%]"
+  class="absolute right-0 bottom-0 w-[65%]"
 />
 
 {% schema %}
@@ -30,25 +30,11 @@
   "tag": "section",
   "class": "relative",
   "limit": 1,
-  "max_blocks": 1,
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Bannière"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Titre",
-      "type": "title",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Titre de la bannière"
-        }
-      ]
+      "label": "Titre"
     }
   ]
 }
