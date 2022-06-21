@@ -177,6 +177,40 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "16557974734885b2b0": {
+      "type": "newsletter",
+      "blocks": {
+        "1655797473ad470e79-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "1655797473ad470e79-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "1655797473ad470e79-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1655797473ad470e79-0",
+        "1655797473ad470e79-1",
+        "1655797473ad470e79-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -185,6 +219,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "16557974734885b2b0"
   ]
 }
