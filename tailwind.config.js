@@ -11,6 +11,9 @@ module.exports = {
     extend: {
       maxWidth: {
         content: '1440px'
+      },
+      fontFamily: {
+        serif: ['Eugusto', 'serif']
       }
     },
   },
