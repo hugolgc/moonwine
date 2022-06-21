@@ -1,22 +1,22 @@
 <div class="max-w-content mx-auto px-[24px] space-y-[50px]">
-  <h2 class="text-gray-dark text-center text-[80px] font-serif">Nos vins du moment</h2>
+  <h2 class="text-gray-dark text-center text-[80px] font-serif">{{ section.settings.title | escape }}</h2>
   <div class="grid grid-cols-4 gap-[1px]">
 
-    {% for item in (0..3) %}
-    <a href="#" class="block bg-green-light/20 shadow-grid">
+    {%- for product in section.settings.collection.products limit: section.settings.productLength -%}
+    <a href="{{ product.url }}" class="block bg-green-light/20 shadow-grid">
       <article class="py-[24px] space-y-[24px]">
         <img
-          src="https://toppng.com/uploads/preview/red-wine-bottle-115469785000mn3ykraej.png"
+          src="{{ product.featured_media | image_url: width: 512 }}"
           alt="Nom du produit"
           class="mx-auto"
         />
         <div class="space-y-[8px] text-center font-medium">
-          <h3 class="text-gray-dark">Blanc sur rouge</h3>
-          <h4 class="text-gray-medium">20€</h4>
+          <h3 class="text-gray-dark">{{ product.title | escape }}</h3>
+          <h4 class="text-gray-medium">{{ product.price | money }}</h4>
         </div>
       </article>
     </a>
-    {% endfor %}
+    {%- endfor -%}
 
   </div>
   <div class="flex">
@@ -26,7 +26,7 @@
 
 {% schema %}
 {
-  "name": "Collection mise en avant",
+  "name": "t:sections.featured-collection.name",
   "tag": "section",
   "class": "py-[56px]",
   "limit": 1,
