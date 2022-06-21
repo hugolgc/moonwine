@@ -131,14 +131,14 @@
             "type": "link_list",
             "settings": {
               "heading": "Info",
-              "menu": "footer"
+              "menu": "main-menu"
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "subtext": "<p>Share cot information, store details, and brand content with your customers.<\/p>"
             }
           }
         },
@@ -148,16 +148,11 @@
           "footer-2"
         ],
         "settings": {
-          "color_scheme": "background-1",
-          "newsletter_enable": true,
-          "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
-          "enable_country_selector": false,
-          "enable_language_selector": false,
-          "payment_enable": true,
-          "margin_top": 48,
-          "padding_top": 36,
-          "padding_bottom": 36
+          "link_cgv": "liens 1",
+          "link_confidentialite": "liens 2",
+          "link_cookies": "liens 3",
+          "image_alcool_warning": "shopify:\/\/shop_images\/image_1.png"
         }
       },
       "main-password-header": {
